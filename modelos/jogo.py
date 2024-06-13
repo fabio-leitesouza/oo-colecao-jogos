@@ -19,8 +19,11 @@ class Jogo:
     @property
     def ativo(self):
         return '☑' if self._ativo else '☐'    
-    
+    def alterar_status(self):
+        self._ativo = not self._ativo
+    z
 jogo_zelda = Jogo('zelda', 'RPG')
+jogo_zelda.alterar_status()
 jogo_metroid = Jogo('Metroid', 'Plataforma')
 
 Jogo.listar_jogos()
