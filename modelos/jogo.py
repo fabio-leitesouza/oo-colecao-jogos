@@ -11,15 +11,14 @@ class Jogo:
         Jogo.jogos.append(self)
     def __str__(self):
         return f'{self._nome} | {self._categoria}'
-    def listar_jogos():
+    @classmethod
+    def listar_jogos(cls):
         print(f"{'Nome do jogo'.ljust(20)} | {'Categoria'.ljust(20)} | {'Status'}")
-        for jogo in Jogo.jogos:
+        for jogo in cls.jogos:
             print(f'{jogo._nome.ljust(20)} | {jogo._categoria.ljust(20)} | {jogo.ativo}')    
     @property
     def ativo(self):
-        return '☑' if self._ativo else '☐'
-     
-    
+        return '☑' if self._ativo else '☐'    
     
 jogo_zelda = Jogo('zelda', 'RPG')
 jogo_metroid = Jogo('Metroid', 'Plataforma')
