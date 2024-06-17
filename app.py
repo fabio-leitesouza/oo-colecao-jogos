@@ -7,9 +7,9 @@ jogo_sonic = Jogo('sonic', 'plataforma')
 
 jogo_metroid.alterar_status()
 
-# jogo_metroid.recebe_nota('Souza', 10)
-# jogo_metroid.recebe_nota('Eduarda', 8)
-# jogo_metroid.recebe_nota('Pedro', 7)
+jogo_metroid.recebe_nota('Souza', 10)
+jogo_metroid.recebe_nota('Eduarda', 8)
+jogo_metroid.recebe_nota('Pedro', 7)
 
 def main():
     Jogo.listar_jogos()

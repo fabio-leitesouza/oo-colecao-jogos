@@ -9,6 +9,7 @@ class Jogo:
         self._nome = nome.title()
         self._categoria = categoria.upper()
         self._ativo = False
+        self._preco = 0
         #criando uma lista de notas
         self._avaliacao = []
         Jogo.jogos.append(self)
