@@ -5,11 +5,11 @@ from modelos.nota import Avaliacao
 class Jogo:
     jogos = []
     
-    def __init__(self, nome, categoria):        
+    def __init__(self, nome, categoria, preco):        
         self._nome = nome.title()
         self._categoria = categoria.upper()
         self._ativo = False
-        self._preco = 0
+        self._preco = preco
         #criando uma lista de notas
         self._avaliacao = []
         Jogo.jogos.append(self)
