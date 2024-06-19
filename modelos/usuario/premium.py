@@ -1,13 +1,13 @@
-from modelos.usuario.normal import User
+from modelos.usuario.user import User
 
 class UserPremium(User):
     """
     Classe UserPremium que herda da classe User.    
     Esta classe representa um usuário premium com funcionalidades adicionais.
     """    
-    def __init__(self, username, email, premium_since):
+    def __init__(self, username, email, premium_since, credito):
         
-        super().__init__(username, email)
+        super().__init__(username, email, credito)
         self._premium_since = premium_since
         self._benefits = []
     

@@ -5,29 +5,19 @@ class Plataforma:
         self._nome = nome
         self._empresa = empresa
         self._jogos = [] 
+        
+    def __str__(self):
+        return self._nome
     
-    def adicionar_jogo(self, nome, categoria, preco):
-        jogo = Jogo(nome, categoria, preco)
+    def adicionar_jogo(self, jogo):
         self._jogos.append(jogo)
-    
-    def encontrar_jogo(self, nome):
-        for jogo in self._jogos:
-            if jogo._nome == nome.title():
-                return jogo
-        return None
-    
-    def alterar_status_jogo(self, nome):
-        jogo = self.encontrar_jogo(nome)
-        if jogo:
-            jogo.alterar_status()
-            print(f"Status do jogo '{jogo._nome}' foi alterado para {jogo.ativo}.")
-        else:
-            print(f"Jogo '{nome}' não encontrado.")
-    
-    def recebe_nota_jogo(self, nome, usuario, nota):
-        jogo = self.encontrar_jogo(nome)
-        if jogo:
-            jogo.recebe_nota(usuario, nota)
-            print(f"Nota {nota} recebida para o jogo '{jogo._nome}' do usuário '{usuario}'.")
-        else:
-            print(f"Jogo '{nome}' não encontrado.")
+        
+    def exibir_jogos(self):
+        print(f'Os jogos da plataforma {self._nome}')
+        for i, jogo in enumerate(self._jogos, start=1):
+            if hasattr(jogo, 'categoria'):
+                mensagem = f'{i} | Nome: {jogo._nome} | Categoria: {jogo._categoria} | Preço: {jogo._preco}'
+                print(mensagem)
+            else:
+                mensagem = f'{i} | Nome: {jogo._nome} | Categoria: {jogo._categoria} | Preço: {jogo._preco}'
+                print(mensagem)
